@@ -11,7 +11,7 @@ class CircleDrawer(QtWidgets.QMainWindow):
         self.setGeometry(100, 100, 800, 600)
 
         self.pushButton = QtWidgets.QPushButton("Add Circle", self)
-        self.pushButton.setGeometry(0, 200, 40, 800)
+        self.pushButton.setGeometry(0, 260, 800, 80)
 
         self.pushButton.clicked.connect(self.add_circle)
 
@@ -36,14 +36,6 @@ class CircleDrawer(QtWidgets.QMainWindow):
         g = random.randint(0, 255)
         b = random.randint(0, 255)
         return QColor(r, g, b)
-
-    def resizeEvent(self, event):
-        button_width = 200
-        button_height = 50
-        self.pushButton.setGeometry((self.width() - button_width) // 2, (self.height() - button_height) // 2,
-                                    button_width, button_height)
-        super().resizeEvent(event)
-
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
